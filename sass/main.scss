@@ -1,0 +1,40 @@
+//Custom vars 
+ 
+$primary:#00FFF5;
+$primary-dark:#00ADB5;
+$secondary:#393E46;
+$secondary:#222831;
+$plain-text: #EDF1FF;
+
+$navbar-light-color:#00adb5;
+$navbar-light-active-color:#00fff5;
+
+
+
+//import bootstrap 
+@import '../node_modules/bootstrap/scss/bootstrap';
+//Custom css 
+
+body{
+    background: radial-gradient(circle, rgba(2,2,3,1) 10%, rgba(27,37,40,1) 54%, rgba(2,0,36,1) 100%);
+}
+
+#logo{
+    width:90%;
+}
+#socials{
+    button{
+        svg{
+            color:$secondary;
+            transform:scale(1.4);
+            transition: color .3s ease-in;
+            &:hover{
+                color: $navbar-light-color;
+            }
+        }
+    }
+}
+// Layers 
+.front{
+    z-index:1;
+}
