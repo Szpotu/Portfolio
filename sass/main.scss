@@ -7,6 +7,9 @@ $secondary:#222831;
 $plain-text: #EDF1FF;
 $body-color:#EDF1FF;
 
+$font-family-base:'Noto Sans', sans-serif;
+
+
 $navbar-light-color:#393E46;
 $navbar-light-active-color:#00fff5;
 $nav-link-hover-color:#00ADB5;
@@ -15,10 +18,27 @@ $link-hover-color:#00ADB5;
 //import bootstrap 
 @import '../node_modules/bootstrap/scss/bootstrap';
 @import '../sass/custom_mixins';
-//Custom css 
-
+//Custom css
 body{
     background: radial-gradient(circle, rgba(2,2,3,1) 10%, rgba(27,37,40,1) 54%, rgba(2,0,36,1) 100%);
+}
+// NAVBAR
+.navbar{
+    .container-fluid{
+        button{
+            &:active{
+                border:none;
+            }
+        }
+    }
+}
+.sticky{
+    position:sticky;
+    top:0;
+    transition: transform .4s ease-in-out;
+}
+#navbarNav{
+    font-family: 'Nunito', sans-serif;
 }
 #logo{
     transition: all .3s ease-in-out;
@@ -45,14 +65,12 @@ body{
 .divider{
      height: 40vh;
 }
-.title-div{
-    content:'';
-    height:100%;
-    width:2px;
-    color:white;
-    position:absolute;
-
+.title{
+    border-right: 6px solid $primary-dark;
+    padding-right:10px;
+    color:#00FFF5;
 }
+
 // Layers 
 .front{
     z-index:5;

@@ -1,13 +1,24 @@
+// Modules 
+import * as stickyNav from './custom-navbar.js';
+import * as starAnimation from './background-anim.js';
+import anime from '../node_modules/animejs/lib/anime.es.js';
 //Interactive components workflow
-import * as stickyNavbar from './custom-navbar.js';
 //Navbar
 
 
 
 // -- Social Media Buttons 
 
-// Animations 
-import * as starAnimation from './background-anim.js';
 // Animation - Stars
 starAnimation.animate();
 starAnimation.init();
+let counterStars = 0;
+setInterval(()=>{
+    starAnimation.animate();
+    starAnimation.init();
+    counterStars++;
+    if(counterStars > 4){
+        starAnimation.starsArray=[];
+        // Remove stars from array ?? 
+    }
+},50000);
