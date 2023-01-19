@@ -10,7 +10,7 @@ document.body.append(canvas);
 //Placement 
 canvas.style.position = 'absolute';
 canvas.style.top = '30vh';
-
+canvas.style.zIndex = -1;
 const ctx = canvas.getContext('2d');
 const starsArray = [];
 const starsAmountControl = 100;

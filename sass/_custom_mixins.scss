@@ -3,6 +3,9 @@
     @media screen and (max-width:768px){
         display:grid;
         transform:translateY(10vh);
+        position:absolute;
+        right:10px;
+
     }
 }
 @mixin media-breakpoint-md-stick-right(){
@@ -12,3 +15,7 @@
         z-index:10;
     }
 }
+
+
+
+// Custom hovers 

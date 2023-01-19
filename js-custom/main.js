@@ -1,5 +1,4 @@
 //Interactive components workflow
-import anime from 'animejs/lib/anime.es.js';
 import * as stickyNavbar from './custom-navbar.js';
 //Navbar
 
