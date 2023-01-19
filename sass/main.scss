@@ -13,16 +13,19 @@ $navbar-light-active-color:#00fff5;
 
 //import bootstrap 
 @import '../node_modules/bootstrap/scss/bootstrap';
+@import '../sass/custom_mixins';
 //Custom css 
 
 body{
     background: radial-gradient(circle, rgba(2,2,3,1) 10%, rgba(27,37,40,1) 54%, rgba(2,0,36,1) 100%);
 }
-
 #logo{
+    transition: all .3s ease-in-out;
     width:90%;
 }
+
 #socials{
+    @include media-brakepoint-md-set-vertical();
     button{
         svg{
             color:$secondary;
@@ -33,6 +36,9 @@ body{
             }
         }
     }
+}
+.custom-nav-position{
+    @include media-breakpoint-md-stick-right();
 }
 // Layers 
 .front{

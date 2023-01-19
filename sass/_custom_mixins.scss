@@ -1,0 +1,14 @@
+@import '../node_modules/bootstrap/scss/bootstrap';
+@mixin media-brakepoint-md-set-vertical(){
+    @media screen and (max-width:768px){
+        display:grid;
+        transform:translateY(10vh);
+    }
+}
+@mixin media-breakpoint-md-stick-right(){
+    @media screen and(max-width:768px){
+        position:absolute;
+        right:5px;
+        z-index:10;
+    }
+}

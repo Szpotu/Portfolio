@@ -1,3 +1,4 @@
+
 const canvas = document.createElement('canvas');
 const canvas2 = document.createElement('canvas');
 
@@ -5,7 +6,6 @@ canvas.setAttribute('class','anim-stars');
 canvas2.setAttribute('class','anim-stars');
 document.body.append(canvas);
 
-let divider = document.querySelector('.divider');
 
 //Placement 
 canvas.style.position = 'absolute';
@@ -13,7 +13,7 @@ canvas.style.top = '30vh';
 
 const ctx = canvas.getContext('2d');
 const starsArray = [];
-const starsAmountControl = 50;
+const starsAmountControl = 100;
 // CTX is reffering to an Object CanvasRenderingContext2D, where every properties and methods are placed.
  
 canvas.width = window.innerWidth;
@@ -49,30 +49,28 @@ class Star {
     	ctx.fill();
     }
 }
-function animate(){
+export function animate(){
 	ctx.clearRect(0, 0,canvas.width, canvas.height)
     handleStars();
     requestAnimationFrame(animate);
     
 }
-animate();
-function init(){
+
+export function init(){
 	for(let i=0;i<starsAmountControl;i++){ 
     	starsArray.push(new Star());
         if(i > starsAmountControl/2){
         	starsArray[i].speedX = Math.random() * -0.1;
             starsArray[i].color = '#00ADB5';
         }
-    }
-
-
-    
+    } 
 }
-init();
+
 function handleStars(){
 	for(let i = 0; i < starsArray.length;i++){
     	starsArray[i].update();
         starsArray[i].draw();
+        /* Draws lines between stars 
          for(let j = i; j < starsArray.length;j++){
         	const dx = starsArray[i].x - starsArray[j].x;
             const dy = starsArray[j].y - starsArray[j].y;
@@ -86,6 +84,7 @@ function handleStars(){
                 ctx.stroke();
             }
         }
+        */
         if(starsArray[i].size <= 0.3){
         	starsArray.splice(i, 1);
             i--;

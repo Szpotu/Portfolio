@@ -9,6 +9,7 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "animejs": "^3.2.1",
     "bootstrap": "^5.2.3",
     "bootstrap-icons": "^1.10.3"
   }
