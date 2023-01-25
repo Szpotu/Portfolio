@@ -24,6 +24,7 @@ body{
 }
 // NAVBAR
 .navbar{
+    z-index:20;
     .container-fluid{
         button{
             &:active{
@@ -32,10 +33,30 @@ body{
         }
     }
 }
-.sticky{
-    position:sticky;
-    top:0;
-    transition: transform .4s ease-in-out;
+//Desktop only 
+@media screen and(min-width:768px){
+    .shrinked-nav{
+        animation:shrink .5s ease-in;
+        position:fixed;
+        background-color: $secondary;
+        opacity:.7;
+     }
+     #socials{
+        button{
+            svg{        
+                color:$navbar-light-color;
+            }
+        }
+     }
+}
+
+
+.navbar-nav{
+    gap:10px;
+    li{
+        //Underline control 
+        @include hover-navbar();
+}
 }
 #navbarNav{
     font-family: 'Nunito', sans-serif;
@@ -43,6 +64,10 @@ body{
 #logo{
     transition: all .3s ease-in-out;
     width:90%;
+    opacity:.5;
+    &:hover{
+        opacity:1;
+    }
 }
 
 #socials{
@@ -74,4 +99,15 @@ body{
 // Layers 
 .front{
     z-index:5;
+}
+//Keyframes;
+@keyframes shrink{
+    0%{
+        transform:scale(1);
+        opacity:0;
+    }
+    100%{
+        opacity:.7;
+    }
+    
 }

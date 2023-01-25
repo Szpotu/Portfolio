@@ -1,11 +1,11 @@
 // Modules 
-import * as stickyNav from './custom-navbar.js';
 import * as starAnimation from './background-anim.js';
 import anime from '../node_modules/animejs/lib/anime.es.js';
+import * as navigation from '../js-custom/sticky-nav.js';
 //Interactive components workflow
 //Navbar
-
-
+ 
+navigation.stickyNav();
 
 // -- Social Media Buttons 
 
@@ -13,12 +13,11 @@ import anime from '../node_modules/animejs/lib/anime.es.js';
 starAnimation.animate();
 starAnimation.init();
 let counterStars = 0;
-setInterval(()=>{
+let animInterval = setInterval(()=>{
     starAnimation.animate();
     starAnimation.init();
     counterStars++;
     if(counterStars > 4){
-        starAnimation.starsArray=[];
-        // Remove stars from array ?? 
+        clearInterval(animInterval);
     }
-},50000);
+},1000000);

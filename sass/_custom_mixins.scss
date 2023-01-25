@@ -2,7 +2,7 @@
 @mixin media-brakepoint-md-set-vertical(){
     @media screen and (max-width:768px){
         display:grid;
-        transform:translateY(10vh);
+        transform:translateY(20vh);
         position:absolute;
         right:10px;
 
@@ -15,7 +15,63 @@
         z-index:10;
     }
 }
-
-
-
 // Custom hovers 
+// Menu underline 
+@mixin hover-navbar(){
+    a {
+        opacity:.7;
+        overflow: hidden;
+        position: relative;
+        display: inline-block;
+        &::before, &::after {
+          content: '';
+          position: absolute;
+          width: 100%;
+          left: 0;
+        }
+        &::before {
+          background-color: $primary;
+          height: 2px;
+          bottom: 0;
+          transform-origin: 100% 50%;
+          transform: scaleX(0);
+          transition: transform .3s cubic-bezier(0.165, 0.84, 0.44, 1);
+        }
+        &::after {
+          content: attr(data-replace);
+          height: 100%;
+          top: 0;
+          transform-origin: 100% 50%;
+          transform: translate3d(200%, 0, 0);
+          transition: transform .3s cubic-bezier(0.4, 0, 0.24, 1);
+          color: $primary;
+        }
+        &:hover::before {
+          transform-origin: 50% 50%;
+          transform: scaleX(1);
+          
+        }
+        &:hover::after {
+          transform: translate3d(0, 0, 100px);
+          
+        }
+        span {
+          display: inline-block;
+          transition: transform .3s cubic-bezier(0.4, 0, 0.10, 1);
+        }
+        &:hover span {
+
+          transform: translate3d(-200%, 0, 0);
+        }
+      }
+      
+      
+      a {
+        text-decoration: none;
+        color: #18272F;
+        font-weight: 700; 
+      }
+}
+
+
+//Animations 
