@@ -1,53 +1,55 @@
 
 const canvas = document.createElement('canvas');
-
-canvas.setAttribute('class','anim-stars')
-const ctx = canvas.getContext('2d');
+const canvas2 = document.createElement('canvas');
+;
+canvas2.setAttribute('class','anim-stars');
 document.body.append(canvas);
+
+canvas.width = window.screen.width;
+canvas.height = window.screen.height;
+var params = {
+   canvasWidth:canvas.width,
+   canvasHeight:canvas.height,
+   amountOfStars:150,
+   baseColor:'rgb(0,240,255)',
+   multiopacity:true,
+   baseSize:4,
+   multisize:true,
+   speed:1,
+   twinkle:false,   
+   twinkleSpeed: Number,
+   linked:false, 
+}
+
+//Placement 
+canvas.style.position = 'absolute';
+canvas.style.top = '30vh';
+canvas.style.zIndex = -1;
+const ctx = canvas.getContext('2d');
 var starsArray = [];
 // CTX is reffering to an Object CanvasRenderingContext2D, where every properties and methods are placed.
-
-//Object params declares animation features 
- var params = {
- 	canvasWidth:window.innerWidth,
-    canvasHeight:window.innerHeight,
-	amountOfStars:'',
-    baseColor:'rgb(0,240,255)',
-    multiopacity:true,
-    baseSize:2,
-    multisize:true,
-    speed:1,
-    twinkle:false,   
-    twinkleSpeed: Number,
-    linked:false, 
-}
  
-canvas.width = params.canvasWidth;
-canvas.height = params.canvasHeight; 
-window.addEventListener('resize',function(){
-	canvas.width = window.innerWidth;
-    canvas.height = window.innerHeight; 
-    ctx.fillStyle = 'white';
-	ctx.fillRect(10,10,50,50);
-})
 
+window.addEventListener('resize',function(){
+	canvas.width = window.screen.width;
+    canvas.height = window.screen.height; 
+  
+})
 
 class Star {
 	constructor(){
     	this.x = Math.random() * canvas.width + 1; 
         this.y = Math.random() * canvas.height +1;
-        //Control size
         if(params.multisize){
-        	this.size = Math.random() * params.baseSize + 1;
+            this.size = Math.random() * params.baseSize + 1;
         }
         else{
-        	this.size = params.baseSize; 
+            this.size = params.baseSize;
         }
+        
         this.speedX = Math.random()* params.speed/10;
-        this.speedY = Math.random()* params.speed/10;  // Vector of movement
-        // Set base color
+        this.speedY = Math.random()* params.speed/10; // Vector of movement
         this.color = params.baseColor;
-        // Control multitransparency 
         if(params.multiopacity){
         	this.multiopacity=Math.random()*.7;
         }
@@ -55,15 +57,12 @@ class Star {
         	this.multiopacity = 1; 
         }
     }
-    //Update current star position
     update(){
     	this.x += this.speedX; 
         this.y += this.speedY; 
         
     }
-    //Draw star on canvas 
-    draw(){
-    	
+    draw(){ 
         ctx.globalAlpha = this.multiopacity;
     	ctx.fillStyle = this.color;
     	ctx.beginPath();
@@ -74,25 +73,25 @@ class Star {
 export function animate(){
 	ctx.clearRect(0, 0,canvas.width, canvas.height)
     handleStars();
-    requestAnimationFrame(animate);
-    
+    requestAnimationFrame(animate); 
 }
 
 export function init(){
-	for(let i=0;i<200;i++){ 
+	for(let i=0;i<params.amountOfStars;i++){ 
     	starsArray.push(new Star());
-        if(i > 100){
+        if(i > params.amountOfStars/2){
         	starsArray[i].speedX = Math.random() * -0.1;
+            starsArray[i].color = '#00ADB5';
         }
-    }
+    } 
 }
-// EXTRA EFFECTS 
+
 function handleStars(){
 	for(let i = 0; i < starsArray.length;i++){
     	starsArray[i].update();
         starsArray[i].draw();
-        
-        if(params.linked){
+         //Draws lines between stars 
+         if(params.linked){
          for(let j = i; j < starsArray.length;j++){
         	const dx = starsArray[i].x - starsArray[j].x;
             const dy = starsArray[j].y - starsArray[j].y;
@@ -100,12 +99,13 @@ function handleStars(){
             if(distance < 1000){
             	ctx.beginPath();
                 ctx.strokeStyle = starsArray[i].color; 
-                ctx.lineWidth = 1;
+                ctx.lineWidth = .3;
                 ctx.moveTo(starsArray[i].x, starsArray[i].y );//Create line between points 
                 ctx.lineTo(starsArray[j].x , starsArray[j].y );
                 ctx.stroke();
             }
-        }}
+        }
+    }
         if(starsArray[i].size <= 0.3){
         	starsArray.splice(i, 1);
             i--;
@@ -113,10 +113,8 @@ function handleStars(){
         if(params.twinkle && i % 20 ==0){
         	twinkle(starsArray[i]);
         }
-        
     }
 }
-//Twinkling
 function twinkle(star){
 	let i = 0;
     let j = 255; 
@@ -128,7 +126,3 @@ function twinkle(star){
         }
 	},1000)
 }
-
-
-
-

@@ -43,7 +43,7 @@
           top: 0;
           transform-origin: 100% 50%;
           transform: translate3d(200%, 0, 0);
-          transition: transform .3s cubic-bezier(0.4, 0, 0.24, 1);
+          transition: transform .3s cubic-bezier(0.1, 0, 0.24, .1);
           color: $primary;
         }
         &:hover::before {
@@ -73,5 +73,15 @@
       }
 }
 
+//Components 
+
+//Social Buttons 
+@mixin social-btn(){
+  color:$secondary;
+  transform:scale(1);
+  transition: color .3s ease-in;
+  &:hover{
+      color: $navbar-light-color;
+}}
 
 //Animations 

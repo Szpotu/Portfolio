@@ -6,16 +6,12 @@ $secondary:#393E46;
 $secondary:#222831;
 $plain-text: #EDF1FF;
 $body-color:#EDF1FF;
-
 $font-family-base:'Noto Sans', sans-serif;
-
-
 $navbar-light-color:#393E46;
 $navbar-light-active-color:#00fff5;
 $nav-link-hover-color:#00ADB5;
 $link-hover-color:#00ADB5;
 
-//import bootstrap 
 @import '../node_modules/bootstrap/scss/bootstrap';
 @import '../sass/custom_mixins';
 //Custom css
@@ -74,15 +70,14 @@ body{
     @include media-brakepoint-md-set-vertical();
     button{
         svg{
-            color:$secondary;
-            transform:scale(1.4);
-            transition: color .3s ease-in;
-            &:hover{
-                color: $navbar-light-color;
-            }
+          @include social-btn();
         }
     }
 }
+.social-btn{
+    @include social-btn();
+}
+
 .custom-nav-position{
     @include media-breakpoint-md-stick-right();
 }
@@ -111,3 +106,4 @@ body{
     }
     
 }
+

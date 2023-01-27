@@ -69,8 +69,8 @@
             <div class="container-fluid px-5 mt-5 " >
                 <div class="row gy-md-5">
                     <div class="front col-md-6 px-5 py-3 text-center">
-                        <h1 class="display-1 text-wrap text-start" style='width:3em'>I'm Frontend Developer</h1>
-                        <p class="h3 text-wrap text-start mt-5 " style="width:10em">Lorem ipsum dolor sit amet consectetur adipisicing elit. Maiores, fugiat?</p>
+                        <h1 class="display-1 text-wrap text-start" >I'm Frontend Developer</h1>
+                        <p class="h3 text-wrap text-start mt-5">Lorem ipsum dolor sit amet consectetur adipisicing elit. Maiores, fugiat?</p>
                      </div>
 
 
@@ -106,18 +106,16 @@
             <h1 class="h1 text-uppercase">My <strong class="title text-uppercase">Skills</strong></h1>
             <p class="h4 mt-5 text-wrap" style="width:50%">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Quam vero pariatur saepe doloremque reprehenderit velit.</p>
         </div>
-        <div class="row px-5">
-            <div class="col-3">Point 1</div>
-            <div class="col-3">Point 2</div>
-            <div class="col-3">Point 3</div>
-            <div class="col-3">Point 4</div>
+        <div class="container-fluid">
+          <img src="/img/icons/technologies/html5.png"/>
+            <img src="/img/icons/technologies/icons8-css3-240.png"/>
+            <img src="/img/icons/technologies/icons8-javascript-240.png"/>
+            <img src="/img/icons/technologies/icons8-bootstrap-240.png"/>
+            <img src="/img/icons/technologies/figma.png"/>
+            <img src='/img/icons/technologies/react.png'>
+            <img src="/img/icons/technologies/git.png">
         </div>
-        <div class="row px-5">
-            <div class="col-3">Point 1</div>
-            <div class="col-3">Point 2</div>
-            <div class="col-3">Point 3</div>
-            <div class="col-3">Point 4</div>
-        </div>
+            
     </section>
     <section class="divider"></section>
     <section class="page" id="portfolio">
@@ -128,7 +126,7 @@
                 <div class="col">
                  
                 </div>
-                <div class="col"> <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/e/ec/Mona_Lisa%2C_by_Leonardo_da_Vinci%2C_from_C2RMF_retouched.jpg/270px-Mona_Lisa%2C_by_Leonardo_da_Vinci%2C_from_C2RMF_retouched.jpg" class="rounded mx-auto d-block col-md-6 front" alt="Responsive image"></div>
+                <div class="col"> <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/e/ec/Mona_Lisa%2C_by_Leonardo_da_Vinci%2C_from_C2RMF_retouched.jpg/270px-Mona_Lisa%2C_by_Leonardo_da_Vinci%2C_from_C2RMF_retouched.jpg" class="rounded mx-auto d-block col-md-6 front img-fluid" alt="Responsive image"></div>
             </div>
             <div class="row">
                 <div class="col"></div>
@@ -147,10 +145,54 @@
         <h1 class="display-4">Contact</h1>
         <h2>Lorem, ipsum dolor.</h2>
         <h3 class="h3">Lorem ipsum dolor sit amet.</h3>
-        <div class="container"> <!--Contact form-->
+        <div class="container "></div>
+        <section class="divider"></section>
+        <div class="container"> <!--Contact 
+          form-->
+          <div class="container-fluid">
+            <div class="row gx-5 gy-5">
+              <div class="col-lg-7">
+                <!--Form field - first name / last name-->
+                <div class="row m-sm-6 gy-3">
+                  <div class="col-sm-6">
+                    <input class="form-control custom-input" type="text" placeholder="First name" aria-label="First name">
+                  </div>
+                  <div class="col-sm-6">
+                    <input class="form-control custom-input" type="text" placeholder="Last name" aria-label="Last name name">
+                  </div>
+                  <div class="mb-lg-5">
+                    <label for="message" class="col-form-label-sm">Message</label>
+                    <textarea class="form-control" id="message-area" rows="3"></textarea>
+                    <button class="btn custom-submit-btn" type="submit">Message Me!</button>
+                  </div>
+                </div>
+              </div>
+              <div class="col-lg-5">
+                <h3 class="h3">Contact Information</h3>
+                <h2 class="h2 text-wrap">Lorem ipsum dolor, sit amet consectetur adipisicing elit. A velit itaque consequuntur quisquam debitis accusamus!</h2>
+                <div class="row contact-data">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="col-6 bi bi-phone" viewBox="0 0 16 16">
+                    <path d="M11 1a1 1 0 0 1 1 1v12a1 1 0 0 1-1 1H5a1 1 0 0 1-1-1V2a1 1 0 0 1 1-1h6zM5 0a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h6a2 2 0 0 0 2-2V2a2 2 0 0 0-2-2H5z"/>
+                    <path d="M8 14a1 1 0 1 0 0-2 1 1 0 0 0 0 2z"/>
+                  </svg>
+                  <p class="col-6 contact-data">+48 534199672</p>
+                </div>
+                <div class="row contact-data">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="col-6 bi bi-chat-right-text" viewBox="0 0 16 16">
+                    <path d="M2 1a1 1 0 0 0-1 1v8a1 1 0 0 0 1 1h9.586a2 2 0 0 1 1.414.586l2 2V2a1 1 0 0 0-1-1H2zm12-1a2 2 0 0 1 2 2v12.793a.5.5 0 0 1-.854.353l-2.853-2.853a1 1 0 0 0-.707-.293H2a2 2 0 0 1-2-2V2a2 2 0 0 1 2-2h12z"/>
+                    <path d="M3 3.5a.5.5 0 0 1 .5-.5h9a.5.5 0 0 1 0 1h-9a.5.5 0 0 1-.5-.5zM3 6a.5.5 0 0 1 .5-.5h9a.5.5 0 0 1 0 1h-9A.5.5 0 0 1 3 6zm0 2.5a.5.5 0 0 1 .5-.5h5a.5.5 0 0 1 0 1h-5a.5.5 0 0 1-.5-.5z"/>
+                  </svg>
+                  <p class="col-6 contact-data">szpots.dev@gmail.com</p>
+                </div>
+              </div>
+
+            </div>
+          </div>
+
         </div>
 
     </footer>
+    <!--Slideback button-->
   </section>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
     <noscript>Wygląda na to, że Twoja przeglądarka blokuje Javascript. Niektóre elementy strony mogą być niedostępne.</noscript>

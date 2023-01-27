@@ -1,5 +1,5 @@
 // Modules 
-import * as starAnimation from './background-anim.js';
+import * as starAnimation from './hero-background-anim.js';
 import anime from '../node_modules/animejs/lib/anime.es.js';
 import * as navigation from '../js-custom/sticky-nav.js';
 //Interactive components workflow
@@ -17,7 +17,7 @@ let animInterval = setInterval(()=>{
     starAnimation.animate();
     starAnimation.init();
     counterStars++;
-    if(counterStars > 4){
-        clearInterval(animInterval);
-    }
-},1000000);
+     if(counterStars > 4){
+         clearInterval(animInterval);
+     }
+ },1000000);
