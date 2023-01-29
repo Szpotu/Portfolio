@@ -1,17 +1,18 @@
 // Modules 
-import * as starAnimation from './hero-background-anim.js';
-import anime from '../node_modules/animejs/lib/anime.es.js';
-import * as navigation from '../js-custom/sticky-nav.js';
+import {animate, init} from './hero-background-anim.js';
+
+import {stickyNav} from '../js-custom/sticky-nav.js';
+import * as sillCircle from '../js-custom/deployOnCircle.js';
 //Interactive components workflow
 //Navbar
  
-navigation.stickyNav();
+stickyNav();
 
 // -- Social Media Buttons 
 
 // Animation - Stars
-starAnimation.animate();
-starAnimation.init();
+animate();
+init();
 let counterStars = 0;
 let animInterval = setInterval(()=>{
     starAnimation.animate();
@@ -21,3 +22,4 @@ let animInterval = setInterval(()=>{
          clearInterval(animInterval);
      }
  },1000000);
+
