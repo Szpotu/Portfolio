@@ -2,10 +2,11 @@
 const canvas = document.createElement('canvas');
 const canvas2 = document.createElement('canvas');
 ;
+const sectionWidth = document.querySelector('#home-page').clientWidth;
 canvas2.setAttribute('class','anim-stars');
 document.body.append(canvas);
 
-canvas.width = window.screen.width;
+canvas.width = sectionWidth;
 canvas.height = window.screen.height;
 var params = {
    canvasWidth:canvas.width,
@@ -31,7 +32,7 @@ var starsArray = [];
  
 
 window.addEventListener('resize',function(){
-	canvas.width = window.screen.width;
+	canvas.width = window.innerWidth;
     canvas.height = window.screen.height; 
   
 })

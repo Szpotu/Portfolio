@@ -17,6 +17,7 @@ $link-hover-color:#00ADB5;
 //Custom css
 body{
     background: radial-gradient(circle, rgba(2,2,3,1) 10%, rgba(27,37,40,1) 54%, rgba(2,0,36,1) 100%);
+    overflow-x: hidden;
 }
 // NAVBAR
 .navbar{
@@ -79,14 +80,16 @@ body{
 .social-btn{
     @include social-btn();
 }
-#skill-set{
+#skillset{
     position:relative;
-    img{
-        transform:scale(.5);
-        position:absolute;
-    }
 }
 
+#centered{
+    animation-name: rotate;
+    animation-duration: 2s;
+    animation-iteration-count: infinite;
+    
+}
 
 // Breaks 
 .divider{
@@ -110,7 +113,21 @@ body{
     }
     100%{
         opacity:.7;
-    }
-    
+    } 
 }
+@keyframes rotate{
+    0%{
+        transform:scale(1) rotate(0deg);
+        opacity:.8;
+    }
+    50%{
+        opacity:1; 
+        transform:scale(1.1) rotate(180deg);
+    }
+    100%{
+        opacity:.8;
+        transform:scale(1),rotate(360deg);
+    }
+}
+//media custom 
 

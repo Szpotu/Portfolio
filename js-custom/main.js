@@ -2,7 +2,7 @@
 import {animate, init} from './hero-background-anim.js';
 
 import {stickyNav} from '../js-custom/sticky-nav.js';
-import * as sillCircle from '../js-custom/deployOnCircle.js';
+import * as floatingSkills from './floatingSkills.js';
 //Interactive components workflow
 //Navbar
  
