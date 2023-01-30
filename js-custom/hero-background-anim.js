@@ -1,9 +1,8 @@
 
 const canvas = document.createElement('canvas');
-const canvas2 = document.createElement('canvas');
-;
+
 const sectionWidth = document.querySelector('#home-page').clientWidth;
-canvas2.setAttribute('class','anim-stars');
+canvas.setAttribute('class','anim-stars');
 document.body.append(canvas);
 
 canvas.width = sectionWidth;
@@ -21,7 +20,6 @@ var params = {
    twinkleSpeed: Number,
    linked:false, 
 }
-
 //Placement 
 canvas.style.position = 'absolute';
 canvas.style.top = '30vh';
@@ -29,12 +27,9 @@ canvas.style.zIndex = -1;
 const ctx = canvas.getContext('2d');
 var starsArray = [];
 // CTX is reffering to an Object CanvasRenderingContext2D, where every properties and methods are placed.
- 
-
 window.addEventListener('resize',function(){
 	canvas.width = window.innerWidth;
     canvas.height = window.screen.height; 
-  
 })
 
 class Star {

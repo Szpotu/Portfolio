@@ -14,6 +14,7 @@ $link-hover-color:#00ADB5;
 
 @import '../node_modules/bootstrap/scss/bootstrap';
 @import '../sass/custom_mixins';
+@import '../sass/custom_keyframes';
 //Custom css
 body{
     background: radial-gradient(circle, rgba(2,2,3,1) 10%, rgba(27,37,40,1) 54%, rgba(2,0,36,1) 100%);
@@ -80,6 +81,12 @@ body{
 .social-btn{
     @include social-btn();
 }
+#skillPage{
+    opacity:0;
+}
+#skill-header{
+    transform:translate(-20px);
+}
 #skillset{
     position:relative;
 }
@@ -88,9 +95,61 @@ body{
     animation-name: rotate;
     animation-duration: 2s;
     animation-iteration-count: infinite;
-    
 }
+[data-index="0"]{
 
+    animation-name: rotateX;
+    animation-duration: 3s;
+    animation-iteration-count: infinite;
+}
+[data-index="1"]{
+
+    animation-name: rotateX2;
+    animation-duration: 3s;
+    animation-iteration-count: infinite;
+}
+[data-index="2"]{
+
+    animation-name: pulse;
+    animation-duration: 2s;
+    animation-iteration-count: infinite;
+}
+[data-index="3"]{
+
+    animation-name: rotate3d2;
+    animation-duration: 5s;
+    animation-iteration-count: infinite;
+}
+[data-index="4"]{
+
+    animation-name: rotate3d2;
+    animation-duration: 5s;
+    animation-iteration-count: infinite;
+}
+[data-index="5"]{
+
+    animation-name: rotate3d2;
+    animation-duration: 4s;
+    animation-iteration-count: infinite;
+}
+[data-index="6"]{
+
+    animation-name: pulse;
+    animation-duration: 2s;
+    animation-iteration-count: infinite;
+}
+[data-index="7"]{
+
+    animation-name: dissapear;
+    animation-duration: 1s;
+    animation-iteration-count: infinite;
+}
+[data-index="8"]{
+
+    animation-name: rotateX2;
+    animation-duration: 2s;
+    animation-iteration-count: infinite;
+}
 // Breaks 
 .divider{
      height: 40vh;
@@ -105,29 +164,6 @@ body{
 .front{
     z-index:5;
 }
-//Keyframes;
-@keyframes shrink{
-    0%{
-        transform:scale(1);
-        opacity:0;
-    }
-    100%{
-        opacity:.7;
-    } 
-}
-@keyframes rotate{
-    0%{
-        transform:scale(1) rotate(0deg);
-        opacity:.8;
-    }
-    50%{
-        opacity:1; 
-        transform:scale(1.1) rotate(180deg);
-    }
-    100%{
-        opacity:.8;
-        transform:scale(1),rotate(360deg);
-    }
-}
+
 //media custom 
 
