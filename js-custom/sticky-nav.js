@@ -1,14 +1,16 @@
-let prevScrollPosition = window.pageYOffset; // global var - previous scroll px
+let menuElement = document.querySelector('.menu');
+let menuScrollPosition = document.querySelector('.menu').getBoundingClientRect().y;
 export function stickyNav(){
    window.onscroll = () => {
-
        let actualScrollPosition = window.pageYOffset;
-       if (prevScrollPosition < actualScrollPosition || actualScrollPosition > 250 && window.innerWidth >= 768) {
-           document.querySelector('.navbar').classList.add('shrinked-nav');
+      
+       if (actualScrollPosition > menuScrollPosition && window.innerWidth >= 768) {
+           menuElement.classList.add('sticky-nav');
+           
            
        } else {
-           document.querySelector('.navbar').classList.remove('shrinked-nav');
+           menuElement.classList.remove('sticky-nav');
        }
-       prevScrollPosition = actualScrollPosition;
+       menuScrollPosition = actualScrollPosition;
    }    
 }

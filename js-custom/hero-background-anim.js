@@ -12,7 +12,8 @@ heroPage.append(canv1);
 dividerSection.append(canv2);
 
 canv1.style.position = 'absolute';
-canv1.style.top = '30vh';
+canv1.style.top = '0';
+canv1.style.zIndex = -1;
 canv1.width = window.innerWidth;
 
 

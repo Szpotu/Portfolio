@@ -69,6 +69,12 @@
         color: #18272F;
         font-weight: 700; 
       }
+      img{
+        transition: opacity translate .3s ease-in-out;
+        &:hover{
+          opacity:0;
+        }
+      }
 }
 
 //Components 

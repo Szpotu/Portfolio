@@ -3,7 +3,7 @@
 $primary:#00FFF5;
 $primary-dark:#00ADB5;
 $secondary:#393E46;
-$secondary:#222831;
+$secondary-dark:#222831;
 $plain-text: #EDF1FF;
 $body-color:#EDF1FF;
 $font-family-base:'Noto Sans', sans-serif;
@@ -16,28 +16,37 @@ $link-hover-color:#00ADB5;
 @import '../sass/custom_mixins';
 @import '../sass/custom_keyframes';
 //Custom css
+*{
+    box-sizing: border-box;
+}
 body{
     background: radial-gradient(circle, rgba(2,2,3,1) 10%, rgba(27,37,40,1) 54%, rgba(2,0,36,1) 100%);
     overflow-x: hidden;
 }
 // NAVBAR
-.navbar{
-    z-index:20;
-    .container-fluid{
-        button{
-            &:active{
-                border:none;
+.menu{
+    position:relative;
+    div{
+        ul{
+            display:flex;
+            padding:1rem;
+            gap:2rem;
+            width:70%;
+            list-style-type:none;
+            li{
+                @include hover-navbar();
             }
         }
     }
 }
+
 //Desktop only 
 @media screen and(min-width:768px){
-    .shrinked-nav{
-        animation:shrink .5s ease-in;
+    .sticky-nav{
         position:fixed;
-        background-color: $secondary;
-        opacity:.7;
+        top:0;
+        background-color: $secondary-dark;
+        z-index:20;
      }
      #socials{
         button{
