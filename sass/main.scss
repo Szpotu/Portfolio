@@ -39,7 +39,6 @@ body{
         }
     }
 }
-
 //Desktop only 
 @media screen and(min-width:768px){
     .sticky-nav{
@@ -55,6 +54,28 @@ body{
             }
         }
      }
+}
+//Mobile button 
+.mobile-nav{
+    display:none;
+}
+@media screen and(max-width:768px){
+    .mobile-nav{
+        display: block;
+        padding:1em;
+        outline: 1px solid white;
+    }
+    .menu-list-wrapper{
+        position:relative;
+    }
+    .backdrop-nav{
+        padding: 1em;
+        position: absolute;
+        width:100%;
+        outline: 1px solid red;
+        background-color: transparent;
+        z-index:5;
+    }
 }
 .navbar-nav{
     gap:10px;
