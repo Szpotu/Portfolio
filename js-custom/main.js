@@ -1,7 +1,7 @@
 // Modules 
 import {runAnimation, canv1, canv2,  params1, params2} from './hero-background-anim.js';
 import * as floatingSkills from './floatingSkills.js';
-import { stickyNav } from './sticky-nav.js';
+import { stickyNav } from './nav-control.js';
 //Interactive components workflow
 stickyNav();
 // -- Social Media Buttons 
