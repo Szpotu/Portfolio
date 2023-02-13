@@ -2,12 +2,12 @@
 import {runAnimation, canv1, canv2,  params1, params2} from './hero-background-anim.js';
 import * as floatingSkills from './floatingSkills.js';
 import { stickyNav } from './nav-control.js';
+import * as swiper from './carousel.js';
 //Interactive components workflow
 stickyNav();
 // -- Social Media Buttons 
 
 // Animation - Stars
-
 runAnimation(canv2, params2);
 runAnimation(canv1, params1);
 let countPerformance = 0;

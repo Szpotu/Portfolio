@@ -21,7 +21,7 @@ $link-hover-color:#00ADB5;
 }
 body{
     background: radial-gradient(circle, rgba(2,2,3,1) 10%, rgba(27,37,40,1) 54%, rgba(2,0,36,1) 100%);
-    overflow-x: hidden;
+    
 }
 // NAVBAR
 .menu{
@@ -49,7 +49,7 @@ body{
     }
 }
 //Desktop only 
-@media screen and(min-width:768px){
+@media screen and (min-width:768px){
     .sticky-nav{
         position:fixed;
         top:0;
@@ -68,7 +68,7 @@ body{
 .mobile-nav{
     display:none;
 }
-@media screen and(max-width:768px){
+@media screen and (max-width:768px){
     .mobile-nav{
         display: block;
         cursor:pointer;
@@ -149,7 +149,7 @@ body{
 .custom-nav-position{
     @include media-breakpoint-md-stick-right();
 }
-// Website Icons 
+// Hero Icons  
 #logo{
     transition: all .3s ease-in-out;
     width:90%;
@@ -170,6 +170,8 @@ body{
 .social-btn{
     @include social-btn();
 }
+
+// SKILLS-SET PAGE
 #skillPage{
     opacity:0;
 }
@@ -239,6 +241,70 @@ body{
     animation-duration: 2s;
     animation-iteration-count: infinite;
 }
+// PROJECTS
+
+
+//Porfolio-container
+#laptop-frame{
+    height:100vh;
+    position: relative;
+    transition: all .3s ease-in;
+    display:flex;
+    align-items: center;
+    justify-content:center;
+    img{
+        padding:0;
+        margin:0;
+        position:absolute;
+        top:0;
+        
+    }
+    *{
+        outline:1px solid white;
+    }
+    .carousel-container{
+        margin:0 auto;
+        align-items: center;
+        position:absolute;
+        top:calc(100%*.035);
+        width:calc(100% - (100% * .28));
+        height:calc(100%)
+        
+        .carousel-wrapper{
+            display:inline-block;
+            position:absolute;
+            height:20px;
+            margin:0 auto;
+            width:100%;
+
+            .carousel-item{
+                width:100%;
+                height:100%
+            }
+        }
+    }
+    button{
+        position:absolute;
+        top:25%;
+        border:none;
+        background-color: transparent;
+
+    }
+    .arrow-left{
+        left:5%;
+    }
+    .arrow-right{
+        right:5%;
+        
+    }
+}
+
+
+    
+
+
+
+// OVERALL PAGE ASSETS/RULES 
 // Breaks 
 .divider{
      height: 40vh;

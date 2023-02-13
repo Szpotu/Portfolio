@@ -9,7 +9,7 @@
     }
 }
 @mixin media-breakpoint-md-stick-right(){
-    @media screen and(max-width:768px){
+    @media screen and (max-width:768px){
         position:absolute;
         right:5px;
         z-index:10;
@@ -18,8 +18,7 @@
 // Custom hovers 
 // Menu underline 
 @mixin hover-navbar(){
-    a {
-        z-index:10;
+    a { z-index:10;
         opacity:.7;
         overflow: hidden;
         position: relative;

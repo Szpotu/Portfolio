@@ -4,7 +4,6 @@
 
 export const canv1 = document.createElement('canvas');
 export const canv2 = document.createElement('canvas');
-
 const heroPage = document.querySelector('#home-page');
 const dividerSection = document.querySelector('#anim-2');
 
@@ -19,6 +18,7 @@ canv1.width = window.innerWidth;
 
   window.addEventListener('resize', function() {
     canv1.width = window.innerWidth;
+    canv1.style.width = window.innerWidth;
   });
    
 export const runAnimation = (canvas, params) => {
